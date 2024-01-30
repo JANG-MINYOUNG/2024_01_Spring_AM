@@ -4,6 +4,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import com.example.demo.vo.Member;
+
 @Mapper
 public interface MemberRepository {
 	@Insert("""
@@ -22,4 +24,7 @@ public interface MemberRepository {
 
 	@Select("SELECT LAST_INSERT_ID()")
 	public int getLastInsertId();
+
+	@Select("SELECT * FROM `member` WHERE id = #{id}")
+	public Member getMember(int id);
 }
