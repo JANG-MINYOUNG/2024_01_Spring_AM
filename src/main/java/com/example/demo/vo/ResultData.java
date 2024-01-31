@@ -13,10 +13,6 @@ public class ResultData {
 	public static ResultData from(String resultCode, String msg) {
 		return from(resultCode, msg, null);
 	}
-	
-	public static ResultData from(String resultCode, String msg, String name, String email) {
-		return from(resultCode, msg, null);
-	}
 
 	public static ResultData from(String resultCode, String msg, Object data1) {
 		ResultData rd = new ResultData();
@@ -35,5 +31,7 @@ public class ResultData {
 		return isSuccess() == false;
 	}
 
-	
+	public static ResultData newData(ResultData joinRd, Object newData) {
+		return from(joinRd.getResultCode(), joinRd.getMsg(), newData);
+	}
 }
