@@ -80,8 +80,7 @@ public class UsrArticleController {
 
 	// 로그인 체크 -> 유무 체크 -> 권한 체크 -> 수정
 	@RequestMapping("/usr/article/doModify")
-	@ResponseBody
-	public ResultData<Integer> doModify(HttpSession httpSession, int id, String title, String body) {
+	public ResultData<Integer> doModify(HttpSession httpSession, Model model, int id, String title, String body) {
 
 		boolean isLogined = false;
 		int loginedMemberId = 0;
