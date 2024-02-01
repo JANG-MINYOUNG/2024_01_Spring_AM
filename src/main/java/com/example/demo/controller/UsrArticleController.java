@@ -28,14 +28,21 @@ public class UsrArticleController {
 	// 액션 메서드
 
 	@RequestMapping("/usr/article/detail")
-	public String showdetail(Model model, int id) {
-		Article article = articleService.getArticle(id);
+	public String showDetail(HttpSession httpSession, Model model, int id) {
+		boolean isLogined = false;
+		int loginedMemberId = 0;
+
+		if (httpSession.getAttribute("loginedMemberId") != null) {
+			isLogined = true;
+			loginedMemberId = (int) httpSession.getAttribute("loginedMemberId");
+		}
+
+		Article article = articleService.getForPrintArticle(loginedMemberId, id);
 
 		model.addAttribute("article", article);
 
 		return "usr/article/detail";
 	}
-
 
 	@RequestMapping("/usr/article/list")
 	public String showList(Model model) {
@@ -80,7 +87,8 @@ public class UsrArticleController {
 
 	// 로그인 체크 -> 유무 체크 -> 권한 체크 -> 수정
 	@RequestMapping("/usr/article/doModify")
-	public ResultData<Integer> doModify(HttpSession httpSession, Model model, int id, String title, String body) {
+	@ResponseBody
+	public ResultData<Integer> doModify(HttpSession httpSession, int id, String title, String body) {
 
 		boolean isLogined = false;
 		int loginedMemberId = 0;
@@ -100,7 +108,7 @@ public class UsrArticleController {
 			return ResultData.from("F-1", Ut.f("%d번 글은 존재하지 않습니다", id), "id", id);
 		}
 
-		ResultData loginedMemberCanModifyRd = articleService.loginedMemberCanModify(loginedMemberId, article);
+		ResultData loginedMemberCanModifyRd = articleService.userCanModify(loginedMemberId, article);
 
 		articleService.modifyArticle(id, title, body);
 
