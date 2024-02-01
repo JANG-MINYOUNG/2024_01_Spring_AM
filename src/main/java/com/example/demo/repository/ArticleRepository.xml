@@ -4,9 +4,11 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.repository.ArticleRepository">
 	<select id="getArticles" resultType="Article">
-		SELECT * 
-		FROM article 
-		ORDER BY id DESC
+		SELECT *
+		FROM article AS a
+		INNER JOIN `member` AS m
+		ON a.memberId = m.id
+		ORDER BY a.id DESC
 	</select>
 	
 	<update id="modifyArticle">
@@ -20,9 +22,11 @@
 	</update>
 	
 	<select id="getArticle" resultType="Article">
-		SELECT * 
-		FROM article 
-		WHERE id = #{id}
+	SELECT *
+	FROM article AS a
+	INNER JOIN `member` AS m
+	ON a.memberId = m.id
+	WHERE a.id = 1;
 	</select>
 	
 	
