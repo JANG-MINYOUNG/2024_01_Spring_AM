@@ -1,15 +1,25 @@
 package com.example.demo.controller;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.service.MemberService;
 import com.example.demo.util.Ut;
+import com.example.demo.vo.Article;
 import com.example.demo.vo.Member;
 import com.example.demo.vo.ResultData;
+import com.example.demo.vo.Rq;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -17,6 +27,7 @@ public class UsrMemberController {
 
 	@Autowired
 	private MemberService memberService;
+	
 
 	@RequestMapping("/usr/member/doLogout")
 	@ResponseBody
@@ -37,9 +48,16 @@ public class UsrMemberController {
 		return ResultData.from("S-1", Ut.f("로그아웃 되었습니다"));
 	}
 
+	@RequestMapping("/usr/member/login")
+	public String showlogin(HttpServletRequest req) {
+
+		return "usr/member/login"; 
+	}
+	
+	
 	@RequestMapping("/usr/member/doLogin")
 	@ResponseBody
-	public ResultData<Member> doLogin(HttpSession httpSession, String loginId, String loginPw) {
+	public String doLogin(HttpSession httpSession, String loginId, String loginPw) {
 
 		boolean isLogined = false;
 
@@ -48,29 +66,29 @@ public class UsrMemberController {
 		}
 
 		if (isLogined) {
-			return ResultData.from("F-A", "이미 로그인 상태입니다");
+			return Ut.jsReplace("F-A", "이미 로그인 상태입니다.", "/");
 		}
 
 		if (Ut.isNullOrEmpty(loginId)) {
-			return ResultData.from("F-1", "아이디를 입력해주세요");
+			return Ut.jsReplace("F-1", "아이디를 입력해주세요.");
 		}
 		if (Ut.isNullOrEmpty(loginPw)) {
-			return ResultData.from("F-2", "비밀번호를 입력해주세요");
+			return Ut.jsReplace("F-2", "비밀번호를 입력해주세요.");
 		}
 
 		Member member = memberService.getMemberByLoginId(loginId);
 
 		if (member == null) {
-			return ResultData.from("F-3", Ut.f("%s(은)는 존재하지 않는 아이디입니다", loginId));
+			return Ut.jsReplace("F-3", Ut.f("%s(은)는 존재하지 않는 아이디입니다", loginId),"../member/login");
 		}
 
 		if (member.getLoginPw().equals(loginPw) == false) {
-			return ResultData.from("F-4", Ut.f("비밀번호가 일치하지 않습니다"));
+			return Ut.jsReplace("F-4", "비밀번호가 일치하지 않습니다.","../member/login");		
 		}
 
 		httpSession.setAttribute("loginedMemberId", member.getId());
-
-		return ResultData.from("S-1", Ut.f("%s님 환영합니다", member.getNickname()));
+		
+		return Ut.jsReplace("S-1", Ut.f("%s님 환영합니다", member.getNickname()), "../article/list");
 	}
 
 	@RequestMapping("/usr/member/doJoin")

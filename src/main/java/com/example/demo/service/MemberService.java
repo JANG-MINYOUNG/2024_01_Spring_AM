@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.util.Ut;
+import com.example.demo.vo.Article;
 import com.example.demo.vo.Member;
 import com.example.demo.vo.ResultData;
 
@@ -16,6 +17,12 @@ public class MemberService {
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
+	
+	public Member getForPrintMember(int loginedMemberId, int id) {
+		Member member = memberRepository.getForPrintMember(id);
+		return null;
+	}
+
 
 	public ResultData<Integer> join(String loginId, String loginPw, String name, String nickname, String cellphoneNum,
 			String email) {
@@ -52,4 +59,5 @@ public class MemberService {
 		return memberRepository.getMember(id);
 	}
 
+	
 }

@@ -11,6 +11,13 @@ public interface MemberRepository {
 	@Select("""
 			SELECT *
 			FROM `member`
+			WHERE id = #{id}
+			""")
+	public Member getForPrintMember(int id);
+	
+	@Select("""
+			SELECT *
+			FROM `member`
 			WHERE loginId = #{loginId}
 			""")
 	public Member getMemberByLoginId(String loginId);
@@ -42,5 +49,7 @@ public interface MemberRepository {
 
 	@Select("SELECT * FROM `member` WHERE id = #{id}")
 	public Member getMember(int id);
+
+	
 
 }
