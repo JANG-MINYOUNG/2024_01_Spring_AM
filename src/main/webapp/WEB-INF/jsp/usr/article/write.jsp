@@ -6,14 +6,20 @@
 
 
 <form method="POST" action="doWrite">
-	<div>
-		제목 : <input type="text" placeholder="제목을 입력해주세요" name="title" />
-	</div>
-	<div>
-		내용 :
-		<textarea type="text" placeholder="내용을 입력해주세요" name="body"></textarea>
-	</div>
-	<button type="submit">작성</button>
+	<table class="write-box table-box-1" border="1">
+		<tbody>
+			<tr>
+				<th>제목</th>
+				<td><input type="text" placeholder="제목을 입력해주세요" name="title" /></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea type="text" placeholder="내용을 입력해주세요" name="body"></textarea></td>
+			</tr>
+			<tr>
+				<th></th>
+				<td><button type="submit">작성</button></td>
+	</table>
 </form>
 
 
