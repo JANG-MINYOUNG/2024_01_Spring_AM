@@ -3,7 +3,7 @@
 <c:set var="pageTitle" value="ARTICLE Modify"></c:set>
 <%@ include file="../common/head.jspf"%>
 
-<h3>${article.get("id")}번 게시물 수정
+<h3>${article.get(id)}번 게시물 수정
 	</h3>
 	<div>
 		번호 :
