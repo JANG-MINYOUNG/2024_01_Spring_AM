@@ -110,5 +110,21 @@ public interface ArticleRepository {
 			</script>
 			""")
 	public List<Article> getForPrintArticles(int boardId, int limitFrom, int limitTake);
-
+	
+	
+	@Select("""
+			<script>
+			SELECT *
+			FROM article 
+			WHERE 1
+			<if test="boardId != 0">
+				AND boardId = #{boardId}
+			</if>
+			ORDER BY id DESC
+			<if test="limitFrom >= 0 ">
+				LIMIT #{limitFrom}, #{limitTake}
+			</if>
+			</script>
+			""")
+	List<Article> findByTitleContaining(String keyword);
 }
