@@ -42,17 +42,17 @@
 		<c:set var="endPage" value="${page +  paginationLen  <= pagesCount ? page + paginationLen : pagesCount}" />
 
 		<c:if test="${startPage > 1 }">
-			<a class="btn btn-sm" href="?page=1&boardId=${boardId }">1</a>
+			<a class="btn btn-sm" href="?page=1&boardId=${boardId }&searchKeywordTypeCode=${searchKeywordTypeCode}&searchKeyword=${searchKeyword}">1</a>
 			<button class="btn btn-sm btn-disabled">...</button>
 		</c:if>
 
 		<c:forEach begin="${startPage }" end="${endPage }" var="i">
-			<a class="btn btn-sm ${param.page == i ? 'btn-active' : '' }" href="?page=${i }&boardId=${boardId}">${i }</a>
+			<a class="btn btn-sm ${param.page == i ? 'btn-active' : '' }" href="?page=${i }&boardId=${boardId}&searchKeywordTypeCode=${searchKeywordTypeCode}&searchKeyword=${searchKeyword}">${i }</a>
 		</c:forEach>
 
 		<c:if test="${endPage < pagesCount }">
 			<button class="btn btn-sm btn-disabled">...</button>
-			<a class="btn btn-sm" href="?page=${pagesCount }&boardId=${boardId }">${pagesCount }</a>
+			<a class="btn btn-sm" href="?page=${pagesCount }&boardId=${boardId }&searchKeywordTypeCode=${searchKeywordTypeCode}&searchKeyword=${searchKeyword}">${pagesCount }</a>
 		</c:if>
 
 	</div>
@@ -61,7 +61,7 @@
 	<div class="pagination flex justify-center mt-3">
 		<div class="btn-group">
 			<c:forEach begin="1" end="${pagesCount }" var="i">
-				<a class="btn btn-sm ${param.page == i ? 'btn-active' : '' }" href="?page=${i }&boardId=${param.boardId}">${i }</a>
+				<a class="btn btn-sm ${param.page == i ? 'btn-active' : '' }" href="?page=${i }&boardId=${param.boardId}&searchKeywordTypeCode=${searchKeywordTypeCode}&searchKeyword=${searchKeyword}">${i }</a>
 			</c:forEach>
 		</div>
 	</div>
