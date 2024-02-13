@@ -7960,3 +7960,173 @@ Unconditional classes:
 2024-02-13 13:33:11 [DEBUG] o.s.b.a.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
 2024-02-13 13:33:11 [INFO ] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
 2024-02-13 13:33:11 [DEBUG] o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2024-02-13 13:42:43 [INFO ] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 23 class path changes (1 addition, 1 deletion, 21 modifications)
+2024-02-13 13:42:43 [DEBUG] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Change set: [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\application.yml (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrArticleController.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrHomeController.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrMemberController.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\DemoApplication.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\BeforeActionInterceptor.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\NeedLoginInterceptor.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\NeedLogoutInterceptor.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\MyWebMVCConfigurer.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\repository\ArticleRepository.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\repository\BoardRepository.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\repository\MemberRepository.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\BoardService.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\MemberService.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\UsrArticleController.class (ADD), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\ServletInitializer.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\util\Ut.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\vo\Article.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\vo\Board.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\vo\Member.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\vo\ResultData.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\vo\Rq.class (MODIFY), C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\ArticleService.class (DELETE)]]
+2024-02-13 13:42:43 [DEBUG] o.s.boot.devtools.restart.Restarter - Restarting application
+2024-02-13 13:42:43 [DEBUG] o.s.boot.devtools.restart.Restarter - Stopping application
+2024-02-13 13:42:43 [DEBUG] o.s.b.a.ApplicationAvailabilityBean - Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2024-02-13 13:42:43 [DEBUG] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1d456ab0, started on Tue Feb 13 13:33:11 KST 2024
+2024-02-13 13:42:43 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147482623
+2024-02-13 13:42:43 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Bean 'webServerGracefulShutdown' completed its stop procedure
+2024-02-13 13:42:43 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147481599
+2024-02-13 13:42:43 [INFO ] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2024-02-13 13:42:43 [INFO ] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-02-13 13:42:43 [INFO ] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2024-02-13 13:42:43 [INFO ] o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8081"]
+2024-02-13 13:42:43 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Bean 'webServerStartStop' completed its stop procedure
+2024-02-13 13:42:43 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase -2147483647
+2024-02-13 13:42:43 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-02-13 13:42:43 [DEBUG] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2024-02-13 13:42:43 [DEBUG] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2024-02-13 13:42:43 [DEBUG] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2024-02-13 13:42:43 [DEBUG] o.s.boot.devtools.restart.Restarter - Starting application com.example.demo.DemoApplication with URLs [file:/C:/work/sts-4.21.0.RELEASE-workspace/demo/target/classes/]
+2024-02-13 13:42:43 [INFO ] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.9 with PID 2536 (C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes started by admin in C:\work\sts-4.21.0.RELEASE-workspace\demo)
+2024-02-13 13:42:43 [DEBUG] com.example.demo.DemoApplication - Running with Spring Boot v3.1.9-SNAPSHOT, Spring v6.0.17-SNAPSHOT
+2024-02-13 13:42:43 [INFO ] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-13 13:42:43 [DEBUG] o.s.boot.SpringApplication - Loading source class com.example.demo.DemoApplication
+2024-02-13 13:42:43 [DEBUG] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@b1493b8
+2024-02-13 13:42:43 [DEBUG] o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-02-13 13:42:43 [DEBUG] o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrArticleController.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrHomeController.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrMemberController.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\BeforeActionInterceptor.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\NeedLoginInterceptor.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\NeedLogoutInterceptor.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\MyWebMVCConfigurer.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\BoardService.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\MemberService.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\UsrArticleController.class]
+2024-02-13 13:42:43 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\vo\Rq.class]
+2024-02-13 13:42:43 [WARN ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.demo.DemoApplication]
+2024-02-13 13:42:43 [ERROR] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.demo.DemoApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:178)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:415)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:287)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:344)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:115)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:778)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:597)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at com.example.demo.DemoApplication.main(DemoApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'usrArticleController' for bean class [com.example.demo.service.UsrArticleController] conflicts with existing, non-compatible bean definition of same name and class [com.example.demo.controller.UsrArticleController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:289)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:243)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:164)
+	... 18 common frames omitted
+2024-02-13 13:43:00 [DEBUG] o.s.boot.devtools.restart.Restarter - Starting application com.example.demo.DemoApplication with URLs [file:/C:/work/sts-4.21.0.RELEASE-workspace/demo/target/classes/]
+2024-02-13 13:43:00 [INFO ] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.9 with PID 2536 (C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes started by admin in C:\work\sts-4.21.0.RELEASE-workspace\demo)
+2024-02-13 13:43:00 [DEBUG] com.example.demo.DemoApplication - Running with Spring Boot v3.1.9-SNAPSHOT, Spring v6.0.17-SNAPSHOT
+2024-02-13 13:43:00 [INFO ] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-13 13:43:00 [DEBUG] o.s.boot.SpringApplication - Loading source class com.example.demo.DemoApplication
+2024-02-13 13:43:00 [DEBUG] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2cafbf90
+2024-02-13 13:43:00 [DEBUG] o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-02-13 13:43:00 [DEBUG] o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrArticleController.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrHomeController.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrMemberController.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\BeforeActionInterceptor.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\NeedLoginInterceptor.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\NeedLogoutInterceptor.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\MyWebMVCConfigurer.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\BoardService.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\MemberService.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\UsrArticleController.class]
+2024-02-13 13:43:00 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\vo\Rq.class]
+2024-02-13 13:43:00 [WARN ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.demo.DemoApplication]
+2024-02-13 13:43:00 [ERROR] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.demo.DemoApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:178)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:415)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:287)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:344)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:115)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:778)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:597)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at com.example.demo.DemoApplication.main(DemoApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'usrArticleController' for bean class [com.example.demo.service.UsrArticleController] conflicts with existing, non-compatible bean definition of same name and class [com.example.demo.controller.UsrArticleController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:289)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:243)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:164)
+	... 18 common frames omitted
+2024-02-13 13:43:07 [DEBUG] o.s.boot.devtools.restart.Restarter - Starting application com.example.demo.DemoApplication with URLs [file:/C:/work/sts-4.21.0.RELEASE-workspace/demo/target/classes/]
+2024-02-13 13:43:07 [INFO ] com.example.demo.DemoApplication - Starting DemoApplication using Java 17.0.9 with PID 2536 (C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes started by admin in C:\work\sts-4.21.0.RELEASE-workspace\demo)
+2024-02-13 13:43:07 [DEBUG] com.example.demo.DemoApplication - Running with Spring Boot v3.1.9-SNAPSHOT, Spring v6.0.17-SNAPSHOT
+2024-02-13 13:43:07 [INFO ] com.example.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-13 13:43:07 [DEBUG] o.s.boot.SpringApplication - Loading source class com.example.demo.DemoApplication
+2024-02-13 13:43:07 [DEBUG] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7bf4ad3a
+2024-02-13 13:43:07 [DEBUG] o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-02-13 13:43:07 [DEBUG] o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrArticleController.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrHomeController.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\controller\UsrMemberController.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\BeforeActionInterceptor.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\NeedLoginInterceptor.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\interceptor\NeedLogoutInterceptor.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\MyWebMVCConfigurer.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\BoardService.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\MemberService.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\service\UsrArticleController.class]
+2024-02-13 13:43:07 [DEBUG] o.s.c.a.ClassPathBeanDefinitionScanner - Identified candidate component class: file [C:\work\sts-4.21.0.RELEASE-workspace\demo\target\classes\com\example\demo\vo\Rq.class]
+2024-02-13 13:43:07 [WARN ] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.demo.DemoApplication]
+2024-02-13 13:43:07 [ERROR] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.example.demo.DemoApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:178)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:415)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:287)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:344)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:115)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:778)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:597)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at com.example.demo.DemoApplication.main(DemoApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'usrArticleController' for bean class [com.example.demo.service.UsrArticleController] conflicts with existing, non-compatible bean definition of same name and class [com.example.demo.controller.UsrArticleController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:289)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:243)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:164)
+	... 18 common frames omitted
+2024-02-13 13:43:32 [DEBUG] o.s.boot.devtools.restart.Restarter - Starting application com.example.demo.DemoApplication with URLs [file:/C:/work/sts-4.21.0.RELEASE-workspace/demo/target/classes/]
