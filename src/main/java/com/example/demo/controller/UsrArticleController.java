@@ -62,14 +62,13 @@ public class UsrArticleController {
 
 		List<Article> articles = articleService.getForPrintArticles(boardId, itemsInAPage, page, searchKeywordTypeCode,
 				searchKeyword);
-		
-		
-		model.addAttribute("searchKeywordTypeCode", searchKeywordTypeCode);
-		model.addAttribute("searchKeyword", searchKeyword);
+
 		model.addAttribute("board", board);
 		model.addAttribute("boardId", boardId);
 		model.addAttribute("page", page);
 		model.addAttribute("pagesCount", pagesCount);
+		model.addAttribute("searchKeywordTypeCode", searchKeywordTypeCode);
+		model.addAttribute("searchKeyword", searchKeyword);
 		model.addAttribute("articlesCount", articlesCount);
 		model.addAttribute("articles", articles);
 
@@ -79,6 +78,8 @@ public class UsrArticleController {
 	@RequestMapping("/usr/article/detail")
 	public String showDetail(HttpServletRequest req, Model model, int id) {
 		Rq rq = (Rq) req.getAttribute("rq");
+
+		articleService.increaseHitCount(id);
 
 		Article article = articleService.getForPrintArticle(rq.getLoginedMemberId(), id);
 
