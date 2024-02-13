@@ -6,6 +6,6 @@ $('select[data-value]').each(function(index, el) {
 	if (defaultValue.length > 0) {
 		$el.val(defaultValue);
 	}
+	
 });
 
-localStorage.setItem(hitcount, 1);
