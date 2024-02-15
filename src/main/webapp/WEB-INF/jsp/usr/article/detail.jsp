@@ -4,6 +4,7 @@
 <%@ include file="../common/head.jspf"%>
 
 <!-- <iframe src="http://localhost:8081/usr/article/doIncreaseHitCountRd?id=372" frameborder="0"></iframe> -->
+0
 <script>
 	const params = {};
 	params.id = parseInt('${param.id}');
@@ -54,16 +55,19 @@
 					<td>${article.extra__writer }</td>
 				</tr>
 				<tr>
-					<th>좋아요</th>
-					<td>${article.extra__goodReactionPoint }</td>
-				</tr>
-				<tr>
-					<th>싫어요</th>
-					<td>${article.extra__badReactionPoint }</td>
-				</tr>
-				<tr>
-					<th>추천 합</th>
-					<td>${article.extra__sumReactionPoint }</td>
+					<th>추천</th>
+					<td><div class="flex items-center"><span class="text-blue-700">${usersReaction  }</span>
+					<span>&nbsp;</span>
+					
+					<a href="/usr/reactionPoint/doGoodReaction?relTypeCode=article&relId=${param.id }&replaceUri=${rq.currentUri}" class="reaction btn btn-xs btn-primary">
+					좋아요
+					👍</a>
+					<span>&nbsp;</span>
+					<a href="/usr/reactionPoint/doBadReaction?relTypeCode=article&relId=${param.id }&replaceUri=${rq.currentUri}" class="reaction btn btn-xs btn-secondary">
+					싫어요
+					👎</a>
+					
+					</div></td>
 				</tr>
 				<tr>
 					<th>조회수</th>
