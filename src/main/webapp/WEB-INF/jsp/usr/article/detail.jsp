@@ -4,7 +4,7 @@
 <%@ include file="../common/head.jspf"%>
 
 <!-- <iframe src="http://localhost:8081/usr/article/doIncreaseHitCountRd?id=372" frameborder="0"></iframe> -->
-0
+
 <script>
 	const params = {};
 	params.id = parseInt('${param.id}');
