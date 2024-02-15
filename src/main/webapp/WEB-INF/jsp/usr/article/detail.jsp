@@ -5,11 +5,16 @@
 
 <!-- <iframe src="http://localhost:8081/usr/article/doIncreaseHitCountRd?id=372" frameborder="0"></iframe> -->
 
+<!-- 변수 -->
 <script>
 	const params = {};
 	params.id = parseInt('${param.id}');
+	
+	var isAlreadyAddGoodRp = ${isAlreadyAddGoodRp};
+	var isAlreadyAddBadRp = ${isAlreadyAddBadRp};
 </script>
 
+<!-- 조회수 -->
 <script>
 	function ArticleDetail__doIncreaseHitCount() {
 		const localStorageKey = 'article__' + params.id + '__alreadyView';
@@ -31,8 +36,99 @@
 	$(function() {
 		// 		ArticleDetail__doIncreaseHitCount();
 		setTimeout(ArticleDetail__doIncreaseHitCount, 2000);
-	})
+	});
 </script>
+
+<!-- 좋아요 싫어요  -->
+<script>
+	<!-- 좋아요 싫어요 버튼	-->
+	function checkRP() {
+		if(isAlreadyAddGoodRp == true){
+			$('#likeButton').toggleClass('btn-outline');
+		}else if(isAlreadyAddBadRp == true){
+			$('#DislikeButton').toggleClass('btn-outline');
+		}else {
+			return;
+		}
+	}
+	
+	function doGoodReaction(articleId) {
+		$.ajax({
+			url: '/usr/reactionPoint/doGoodReaction',
+			type: 'POST',
+			data: {relTypeCode: 'article', relId: articleId},
+			dataType: 'json',
+			success: function(data){
+				if(data.resultCode.startsWith('S-')){
+					var likeButton = $('#likeButton');
+					var likeCount = $('#likeCount');
+					var DislikeButton = $('#DislikeButton');
+					var DislikeCount = $('#DislikeCount');
+					
+					if(data.resultCode == 'S-1'){
+						likeButton.toggleClass('btn-outline');
+						likeCount.text(parseInt(likeCount.text()) - 1);
+					}else if(data.resultCode == 'S-2'){
+						DislikeButton.toggleClass('btn-outline');
+						DislikeCount.text(parseInt(DislikeCount.text()) - 1);
+						likeButton.toggleClass('btn-outline');
+						likeCount.text(parseInt(likeCount.text()) + 1);
+					}else {
+						likeButton.toggleClass('btn-outline');
+						likeCount.text(parseInt(likeCount.text()) + 1);
+					}
+				}else {
+					alert(data.msg);
+				}
+			},
+			error: function(jqXHR,textStatus,errorThrown) {
+				alert('좋아요 오류 발생 : ' + textStatus);
+			}
+			
+		});
+	}
+	
+	function doBadReaction(articleId) {
+		$.ajax({
+			url: '/usr/reactionPoint/doBadReaction',
+			type: 'POST',
+			data: {relTypeCode: 'article', relId: articleId},
+			dataType: 'json',
+			success: function(data){
+				if(data.resultCode.startsWith('S-')){
+					var likeButton = $('#likeButton');
+					var likeCount = $('#likeCount');
+					var DislikeButton = $('#DislikeButton');
+					var DislikeCount = $('#DislikeCount');
+					
+					if(data.resultCode == 'S-1'){
+						DislikeButton.toggleClass('btn-outline');
+						DislikeButton.text(parseInt(DislikeButton.text()) - 1);
+					}else if(data.resultCode == 'S-2'){
+						likeButton.toggleClass('btn-outline');
+						likeCount.text(parseInt(DislikeCount.text()) - 1);
+						DislikeButton.toggleClass('btn-outline');
+						DislikeCount.text(parseInt(DislikeCount.text()) + 1);
+					}else {
+						DislikeButton.toggleClass('btn-outline');
+						DislikeCount.text(parseInt(DislikeCount.text()) + 1);
+					}
+				}else {
+					alert(data.msg);
+				}
+			},
+			error: function(jqXHR,textStatus,errorThrown) {
+				alert('싫어요 오류 발생 : ' + textStatus);
+			}
+			
+		});
+	}
+	
+	$(function() {
+		checkRP();
+	});
+</script>
+
 
 <section class="mt-8 text-xl px-4">
 	<div class="mx-auto">
@@ -55,23 +151,27 @@
 					<td>${article.extra__writer }</td>
 				</tr>
 				<tr>
-					<th>추천</th>
-					<td><div class="flex items-center"><span class="text-blue-700">${usersReaction  }</span>
-					<span>&nbsp;</span>
-					
-					<a href="/usr/reactionPoint/doGoodReaction?relTypeCode=article&relId=${param.id }&replaceUri=${rq.currentUri}" class="reaction btn btn-xs btn-primary">
-					좋아요
-					👍</a>
-					<span>&nbsp;</span>
-					<a href="/usr/reactionPoint/doBadReaction?relTypeCode=article&relId=${param.id }&replaceUri=${rq.currentUri}" class="reaction btn btn-xs btn-secondary">
-					싫어요
-					👎</a>
-					
-					</div></td>
+					<th class="reaction">좋아요</th>
+					<td>${article.goodReactionPoint }</td>
+				</tr>
+				<tr>
+					<th>싫어요</th>
+					<td>${article.badReactionPoint }</td>
+				</tr>
+				<tr>
+					<th>추천 ${usersReaction }</th>
+					<td>
+						<!-- href="/usr/reactionPoint/doGoodReaction?relTypeCode=article&relId=${param.id }&replaceUri=${rq.currentUri}" -->
+						<button id="likeButton" class="btn btn-outline btn-success" onclick="doGoodReaction(${param.id})">좋아요</button>
+
+						<button id="DislikeButton" class="btn btn-outline btn-error" onclick="doBadReaction(${param.id})">싫어요</button>
+					</td>
 				</tr>
 				<tr>
 					<th>조회수</th>
-					<td><span class="article-detail__hit-count">${article.hitCount }</span></td>
+					<td>
+						<span class="article-detail__hit-count">${article.hitCount }</span>
+					</td>
 				</tr>
 				<tr>
 					<th>제목</th>
