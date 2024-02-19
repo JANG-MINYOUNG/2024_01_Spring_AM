@@ -32,7 +32,27 @@ public class Ut {
 
 		return false;
 	}
+	
+	public static String jsHistoryBack(String resultCode, String msg, int relId) {
+		if (resultCode == null) {
+			resultCode = "";
+		}
+		if (msg == null) {
+			msg = "";
+		}
+		String resultMsg = resultCode + " / " + msg;
 
+		return Ut.f("""
+				<script>
+					const resultMsg = '%s'.trim();
+					if(resultMsg.length > 0){
+						alert(resultMsg);
+					}
+					history.back();
+				</script>
+				""", resultMsg);
+	}
+	
 	public static String jsHistoryBack(String resultCode, String msg) {
 		if (resultCode == null) {
 			resultCode = "";
@@ -76,5 +96,7 @@ public class Ut {
 				</script>
 				""", resultMsg, replaceUri);
 	}
+
+
 
 }
