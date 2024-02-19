@@ -94,9 +94,15 @@ public class UsrArticleController {
 		if (usersReactionRd.isSuccess()) {
 			model.addAttribute("userCanMakeReaction", usersReactionRd.isSuccess());
 		}
-
+		
 		List<Reply> replies = replyService.getForPrintReplies(rq.getLoginedMemberId(), "article", id);
-
+		
+		ResultData usersReactionRd1 = reactionPointService.usersReaction(rq.getLoginedMemberId(), "reply", id);
+		
+		if (usersReactionRd1.isSuccess()) {
+			model.addAttribute("userCanMakeReaction", usersReactionRd.isSuccess());
+		}
+		
 		int repliesCount = replies.size();
 
 		model.addAttribute("article", article);

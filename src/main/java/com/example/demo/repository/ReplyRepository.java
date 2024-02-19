@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.example.demo.vo.Reply;
 
@@ -35,5 +36,46 @@ public interface ReplyRepository {
 
 	@Select("SELECT LAST_INSERT_ID()")
 	public int getLastInsertId();
+	
+	@Update("""
+			UPDATE reply
+			SET goodReactionPoint = goodReactionPoint + 1
+			WHERE id = #{relId}
+			""")
+	public int increaseGoodReactionPoint(int relId);
 
+	@Update("""
+			UPDATE reply
+			SET goodReactionPoint = goodReactionPoint - 1
+			WHERE id = #{relId}
+			""")
+	public int decreaseGoodReactionPoint(int relId);
+
+	@Update("""
+			UPDATE reply
+			SET badReactionPoint = badReactionPoint + 1
+			WHERE id = #{relId}
+			""")
+	public int increaseBadReactionPoint(int relId);
+
+	@Update("""
+			UPDATE reply
+			SET badReactionPoint = badReactionPoint - 1
+			WHERE id = #{relId}
+			""")
+	public int decreaseBadReactionPoint(int relId);
+
+	@Select("""
+			SELECT goodReactionPoint
+			FROM reply
+			WHERE id = #{relId}
+			""")
+	public int getGoodRP(int relId);
+
+	@Select("""
+			SELECT badReactionPoint
+			FROM reply
+			WHERE id = #{relId}
+			""")
+	public int getBadRP(int relId);
 }
