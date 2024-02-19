@@ -22,4 +22,8 @@ public class Reply {
 
 	private boolean userCanModify;
 	private boolean userCanDelete;
+	
+	public String getForPrintBody() {
+		return body.replace("\n", "<br>");
+	}
 }
