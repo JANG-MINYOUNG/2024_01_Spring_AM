@@ -41,13 +41,13 @@ public class UsrReplyController {
 		Rq rq = (Rq) req.getAttribute("rq");
 
 		if (Ut.isNullOrEmpty(relTypeCode)) {
-			return Ut.jsHistoryBack("F-1", "relTypeCode을(를) 입력해주세요");
+			return Ut.jsHistoryBack("F-1", "내용을 입력해주세요");
 		}
 		if (Ut.isEmpty(relId)) {
-			return Ut.jsHistoryBack("F-2", "relId을(를) 입력해주세요");
+			return Ut.jsHistoryBack("F-2", "내용을 입력해주세요");
 		}
 		if (Ut.isNullOrEmpty(body)) {
-			return Ut.jsHistoryBack("F-3", "body을(를) 입력해주세요");
+			return Ut.jsHistoryBack("F-3", "내용을 입력해주세요");
 		}
 
 		ResultData<Integer> writeReplyRd = replyService.writeReply(rq.getLoginedMemberId(), relTypeCode, relId, body);

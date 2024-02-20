@@ -15,5 +15,5 @@ public class Board {
 	private String name;
 	private boolean delStatus;
 	private String delDate;
-
+	private int reply_count;
 }

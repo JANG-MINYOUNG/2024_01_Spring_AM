@@ -2,6 +2,7 @@ package com.example.demo.repository;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -78,4 +79,28 @@ public interface ReplyRepository {
 			WHERE id = #{relId}
 			""")
 	public int getBadRP(int relId);
+	
+	@Delete("""
+			DELETE FROM reply
+			WHERE id = #{id}
+			""")
+	void deleteReply(int id);
+	
+	@Update("""
+			UPDATE reply
+			SET updateDate = NOW(),
+			`body` = #{body}
+			WHERE id= #{id}
+			""")
+	void modifyReply(int id, String body);
+	
+	@Select("""	
+			SELECT R.*,
+			M.nickname AS extra__writerName
+			FROM reply AS R
+			LEFT JOIN `member` AS M
+			ON R.memberId = M.id
+			WHERE R.id = #{id}			
+			""")
+	public Reply getForPrintReply(int id);
 }
