@@ -79,3 +79,23 @@ header>div>ul>li:hover>ul {
 	display: block;
 }
 
+.logo {
+	
+position: absolute;
+width: 326px;
+height: 0px;
+left: 146px;
+top: 40px;
+
+font-family: 'MV Boli';
+font-style: italic;
+font-weight: 400;
+font-size: 40px;
+line-height: 20px;
+/* or 49% */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFC0CD;
+}
